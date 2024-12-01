@@ -1,0 +1,33 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha test/**/*.test.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "chai-as-promised": "^8.0.1",
+    "mocha": "^10.8.2",
+    "mongodb-memory-server": "^10.1.2"
+  },
+  "mocha": {
+    "recursive": true,
+    "timeout": 30000,
+    "extension": [
+      "js"
+    ]
+  }
+}
