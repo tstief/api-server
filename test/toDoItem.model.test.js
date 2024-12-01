@@ -31,6 +31,7 @@ describe('ToDoItem', () => {
       const item = new ToDoItem({ name: 'Foo', completed: false });
       await item.save();
       item.name.should.equal('Foo');
+      item.completed.should.equal(false);
     });
   });
 });
