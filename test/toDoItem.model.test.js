@@ -28,9 +28,16 @@ describe('ToDoItem', () => {
     });
 
     it('should save without error', async () => {
-      const item = new ToDoItem({ name: 'Foo', completed: false });
+      const item = new ToDoItem({ name: 'Foo', completed: true });
       await item.save();
       item.name.should.equal('Foo');
+      item.completed.should.equal(true);
+    });
+
+    it('completed default to false', async () => {
+      const item = new ToDoItem({ name: 'Bar' });
+      await item.save();
+      item.name.should.equal('Bar');
       item.completed.should.equal(false);
     });
   });
