@@ -21,6 +21,10 @@ describe('ToDoItem', () => {
     await mongoServer.stop();
   });
 
+  beforeEach(async () => {
+    await ToDoItem.deleteMany({});
+  })
+
   describe('#save()', () => {
     it('should fail with no properties', async () => {
       const item = new ToDoItem({});
