@@ -22,6 +22,11 @@ describe('ToDoItem', () => {
   });
 
   describe('#save()', () => {
+    it('should fail with no properties', async () => {
+      const item = new ToDoItem({});
+      item.save().should.eventually.rejectedWith("ToDoItem validation failed: name: Path `name` is required.");
+    });
+
     it('should fail without name', async () => {
       const item = new ToDoItem({ completed: false });
       item.save().should.eventually.rejectedWith("ToDoItem validation failed: name: Path `name` is required.");
@@ -34,7 +39,7 @@ describe('ToDoItem', () => {
       item.completed.should.equal(true);
     });
 
-    it('completed default to false', async () => {
+    it('saves with completed default to false', async () => {
       const item = new ToDoItem({ name: 'Bar' });
       await item.save();
       item.name.should.equal('Bar');
