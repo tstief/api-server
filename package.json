@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha test/**/*.test.js",
-    "start": "node server.js",
-    "coverage": "nyc mocha"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
